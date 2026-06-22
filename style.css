@@ -1,0 +1,115 @@
+:root {
+    --fundo: #f5f6fb;
+    --fundo-senha: #eef1f8;
+    --texto: #1f2937;
+    --branco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #eef1f8;
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    background: var(--branco);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 1.9rem;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d7d9e5;
+    border-radius: 14px;
+    background: #fbfbfe;
+    font-size: 1rem;
+    color: var(--texto);
+}
+
+.parametro-senha__titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.barra {
+    width: 100%;
+    height: 16px;
+    background: var(--fundo-senha);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.forca {
+    height: 100%;
+    width: 0;
+    transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.forca.fraca {
+    width: 25%;
+    background-color: #E71B32;
+}
+
+.forca.media {
+    width: 50%;
+    background-color: #FAF408;
+}
+
+.forca.forte {
+    width: 100%;
+    background-color: #00FF85;
+}
+
+.parametro-senha-textos {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.mensagem {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Força de Senha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Verificador de Força de Senha</h1>
+        <section class="input-group">
+            <label for="senha">Digite sua senha</label>
+            <input id="senha" type="password" placeholder="Senha secreta">
+        </section>
+        <section class="parametro-senha">
+            <h2 class="parametro-senha__titulo">Força da senha</h2>
+            <div class="barra">
+                <div class="forca" id="barra-forca"></div>
+            </div>
+            <div class="parametro-senha-textos">
+                <span>Fraca</span>
+                <span>Média</span>
+                <span>Forte</span>
+            </div>
+            <p class="mensagem" id="mensagem-forca">Digite uma senha para ver a força.</p>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
