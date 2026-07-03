@@ -8,25 +8,60 @@
 </head>
 <body>
     <main class="container">
-        <h1>Verificador de Força de Senha</h1>
-        <section class="input-group">
-            <label for="senha">Digite sua senha</label>
-            <input id="senha" type="password" placeholder="Senha secreta">
+        <h1>🔐 Gerador de Senha</h1>
+        
+        <!-- Saída -->
+        <section class="output-section">
+            <div class="password-display">
+                <input id="senha-gerada" type="text" readonly placeholder="Clique em gerar...">
+                <button id="btn-copiar" class="btn-copiar" title="Copiar">📋</button>
+            </div>
         </section>
-        <section class="parametro-senha">
-            <h2 class="parametro-senha__titulo">Força da senha</h2>
+
+        <!-- Configurações -->
+        <section class="config-section">
+            <div class="config-item">
+                <label>Tamanho: <strong id="valor-tamanho">12</strong></label>
+                <input id="tamanho" type="range" min="4" max="32" value="12">
+            </div>
+
+            <fieldset class="checkboxes">
+                <legend>Caracteres</legend>
+                <label class="checkbox-label">
+                    <input id="maiusculas" type="checkbox" checked>
+                    <span>Maiúsculas (A-Z)</span>
+                </label>
+                <label class="checkbox-label">
+                    <input id="minusculas" type="checkbox" checked>
+                    <span>Minúsculas (a-z)</span>
+                </label>
+                <label class="checkbox-label">
+                    <input id="numeros" type="checkbox" checked>
+                    <span>Números (0-9)</span>
+                </label>
+                <label class="checkbox-label">
+                    <input id="simbolos" type="checkbox" checked>
+                    <span>Símbolos (!@#$)</span>
+                </label>
+            </fieldset>
+
+            <button id="btn-gerar" class="btn-gerar">⚡ Gerar Senha</button>
+        </section>
+
+        <!-- Força -->
+        <section class="strength-section">
+            <h2>Força da Senha</h2>
             <div class="barra">
                 <div class="forca" id="barra-forca"></div>
             </div>
-            <div class="parametro-senha-textos">
+            <div class="strength-labels">
                 <span>Fraca</span>
                 <span>Média</span>
                 <span>Forte</span>
             </div>
-            <p class="mensagem" id="mensagem-forca">Digite uma senha para ver a força.</p>
+            <p class="mensagem" id="mensagem-forca">Gere uma senha para ver a força</p>
         </section>
     </main>
     <script src="main.js"></script>
 </body>
-
 </html>
