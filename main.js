@@ -36,16 +36,31 @@ function gerarSenha() {
         return;
     }
     
+    const tamanho = parseInt(sliderTamanho.value, 10);
     let senha = '';
-    const tamanho = parseInt(sliderTamanho.value);
-    
-    for (let i = 0; i < tamanho; i++) {
-        const indice = Math.floor(Math.random() * caracteres.length);
-        senha += caracteres[indice];
-    }
+
+    do {
+        senha = '';
+        for (let i = 0; i < tamanho; i++) {
+            const indice = Math.floor(Math.random() * caracteres.length);
+            senha += caracteres[indice];
+        }
+    } while (!testarSenha(senha));
     
     senhaGerada.value = senha;
     avaliarForca(senha);
+}
+
+function testarSenha(senha) {
+    const padroesProibidos = ['abcde', '12345', 'ABCDE'];
+
+    for (const padrao of padroesProibidos) {
+        if (senha.includes(padrao)) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 // Avaliar força da senha
